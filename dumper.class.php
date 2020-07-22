@@ -11,12 +11,14 @@ class Dumper{
 	protected $rows = [];
 
 	protected $groupStyles = [
-		'background-color' => 'yellow',
-		'padding' => '0 6px'
+		'color' => 'white',
+		'background-color' => 'red',
+		'padding' => '0 6px',
+		'border-radius' => '2px',
 	];
 
 	protected $logStyles = [
-		'color' => 'blue'
+		
 	];
 
 	private function __construct(){
@@ -38,7 +40,7 @@ class Dumper{
 			foreach($rows as $trace => $logs){
 
 				$trace = addslashes($trace);
-				echo "console.group('%c$trace','$groupStyles');\n";
+				echo "console.group('%cDUMPER%c %s','$groupStyles','','$trace');\n";
 
 				foreach($logs as $log){
 
