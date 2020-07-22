@@ -29,8 +29,9 @@ if(!function_exists('_dump')){
 
 		$args = func_get_args();
 		$dumper = Dumper::getInstance();
-		$dumper->backtraceLevel = 1;
-	
+
+		$dumper->backtraceLevel += 1;
 		call_user_func_array([$dumper, 'dump'], $args);
+		$dumper->backtraceLevel -= 1;
 	}
 }
