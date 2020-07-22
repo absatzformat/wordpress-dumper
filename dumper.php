@@ -20,6 +20,8 @@ define('Absatzformat\Wordpress\Dumper\MENU_SLUG', PLUGIN_SLUG);
 
 require_once 'dumper.class.php';
 
+// TODO: add wp admin page for settings
+
 add_action('wp_print_footer_scripts', [Dumper::class, 'print']);
 
 // global dump function
