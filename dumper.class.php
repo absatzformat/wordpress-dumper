@@ -8,6 +8,8 @@ class Dumper{
 
 	public $backtraceLevel = 0;
 
+	public $useConsoleStyles = true;
+
 	protected $rows = [];
 
 	protected $groupStyles = [
@@ -18,7 +20,7 @@ class Dumper{
 	];
 
 	protected $logStyles = [
-		
+		'background-color' => '#f2f2f2',
 	];
 
 	private function __construct(){
@@ -40,12 +42,22 @@ class Dumper{
 			foreach($rows as $trace => $logs){
 
 				$trace = addslashes($trace);
-				echo "console.group('%cDUMPER%c %s','$groupStyles','','$trace');\n";
-
+				if($self->useConsoleStyles){
+					echo "console.group('%cDUMPER%c %s','$groupStyles','','$trace');\n";
+				}
+				else{
+					echo "console.group('DUMPER $trace');\n";
+				}
+				
 				foreach($logs as $log){
 
 					$encoded = base64_encode($log);
-					echo "console.log('%c'+decodeURIComponent(escape(atob('$encoded'))),'$logStyles');\n";
+					if($self->useConsoleStyles){
+						echo "console.log('%c'+decodeURIComponent(escape(atob('$encoded'))),'$logStyles');\n";
+					}
+					else{
+						echo "console.log(decodeURIComponent(escape(atob('$encoded'))));\n";
+					}
 				}
 
 				echo "console.groupEnd();\n";
