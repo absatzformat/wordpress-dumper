@@ -23,6 +23,7 @@ require_once 'dumper.class.php';
 // TODO: add wp admin page for settings
 
 add_action('wp_print_footer_scripts', [Dumper::class, 'print']);
+add_action('admin_print_footer_scripts', [Dumper::class, 'print']);
 
 // global dump function
 if(!function_exists('_dump')){
