@@ -16,7 +16,7 @@ define('Absatzformat\Wordpress\Dumper\PLUGIN_VERSION', '1.0.0');
 define('Absatzformat\Wordpress\Dumper\PLUGIN_PATH', plugin_dir_path(__FILE__));
 define('Absatzformat\Wordpress\Dumper\PLUGIN_URL', plugin_dir_url(__FILE__));
 define('Absatzformat\Wordpress\Dumper\PLUGIN_SLUG', pathinfo(__FILE__, PATHINFO_FILENAME));
-define('Absatzformat\Wordpress\Dumper\MENU_SLUG', PLUGIN_SLUG);
+define('Absatzformat\Wordpress\Dumper\MENU_SLUG', Absatzformat\Wordpress\Dumper\PLUGIN_SLUG);
 
 require_once 'dumper.class.php';
 
