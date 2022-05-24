@@ -1,20 +1,24 @@
-# Dumper
+# WordPress Dumper
 
-Dump PHP vars to JS console
+Dump PHP variables to JavaScript console in WordPress.
 
-Usage:
+## Usage
 
-[shorthand]
-```
+---
+
+### Shorthand
+
+```php
 _dump($var1, $var2, ...);
 ```
 
-[elaborated]
-```
+### Elaborated
+
+```php
 Absatzformat\Wordpress\Dumper\Dumper::dump($var);
 ```
 or
-```
+```php
 $dumper = Absatzformat\Wordpress\Dumper\Dumper::getInstance();
 $dumper->backtraceLevel = 1;
 $dumper->dump($var);
