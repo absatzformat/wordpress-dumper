@@ -4,8 +4,6 @@ Dump PHP variables to JavaScript console in WordPress.
 
 ## Usage
 
----
-
 ### Shorthand
 
 ```php
